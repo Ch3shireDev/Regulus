@@ -1,0 +1,247 @@
+ID_Record identyfikator rekordu w bazie
+ID_RINGER klucz wiążący z plikiem i pozycją w pliku RINGER
+Source Źródło danych
+Ztyp Typ zeszytu w RINGER
+Znr Numer zeszytu danego Typu
+Zpage Numer strony w zeszycie
+Zrow Numer wiersza na stronie
+CA dwuliterowy kod kraju
+ST dwuliterowy kod stacji
+LO1 dwucyfrowy kod położenia stacji
+LO2 nazwa konkretnego miejsca
+Year rok
+Month miesiąc
+Day dzień
+DateInf Informacja dotycząca niepewność co do dnia
+Hour godzina
+HourInf Informacja dotycząca niepewność co do godziny
+Seas sezon
+Centr1 centrala pierwszej obrączki(metalowej)
+Ring1 numer obrączki
+Ring! potwierdzenie nietypowej obrączki
+Stat0 status zeszytowo-ringerowy
+Centr2 centrala drugiej obrączki(metalowej)
+Ring2 numer drugiej obrączki
+StatRI2 status obrączki nr 2
+TypCol umiejscowienie kolorowej obrączki nr 1
+Ring3_Col kolor kolorowej obrączki nr 1
+No.Col numer kolorowej obrączki
+StatRI3 status kolorowej obrączki
+TypCol2 umiejscowienie kolorowej obrączki nr 2
+Ring4_Col2 kolor kolorowej obrączki nr 2
+Ring4 numer kolejnej obrączki/drugiej kolorowej
+StatRI4 status kolejnej obrączki/drugiej kolorowej
+Net Sieć(numer lub typ)
+Spec Sześcioliterowy kod gatunku
+Sex płeć
+SexInf !/?
+Age wiek szatowy
+AgeInf !/?
+AgeEURING wiek
+Ringer Kod obrączkarza
+Ringer2 Kod mierzącego
+Mass masa
+Mass! potwierdzenie pomiaru odstającego
+Dmass dokładność pomiaru masy
+Fat otłuszczenie
+Fat! potwierdzenie pomiaru odstającego
+Wing skrzydło
+Wing! potwierdzenie pomiaru odstającego
+Tail ogon
+Tail! potwierdzenie pomiaru odstającego
+P1-PC dystans: szczyt pierwszej lotki do szczytu pokryw pierwszorzędowych
+P1-PC! potwierdzenie pomiaru odstającego
+P2-PC dystans: szczyt drugiej lotki do szczytu pokryw pierwszorzędowych
+P2-PC! potwierdzenie pomiaru odstającego
+P1-P2 formuła skrzydła
+P1-P2! potwierdzenie pomiaru odstającego
+D2 formuła skrzydła
+D2! potwierdzenie pomiaru odstającego
+D3 formuła skrzydła
+D3! potwierdzenie pomiaru odstającego
+D4 formuła skrzydła
+D4! potwierdzenie pomiaru odstającego
+D5 formuła skrzydła
+D5! potwierdzenie pomiaru odstającego
+D6 formuła skrzydła
+D6! potwierdzenie pomiaru odstającego
+D7 formuła skrzydła
+D7! potwierdzenie pomiaru odstającego
+D8 formuła skrzydła
+D8! potwierdzenie pomiaru odstającego
+D9 formuła skrzydła
+D9! potwierdzenie pomiaru odstającego
+D10 formuła skrzydła
+D10! potwierdzenie pomiaru odstającego
+Kipp formuła skrzydła
+Kipp! potwierdzenie pomiaru odstającego
+S6 szerokość skrzydła na wysokości 6. lotki drugorzędowej
+S6! potwierdzenie pomiaru odstającego
+WS rozpiętość skrzydeł
+WS! potwierdzenie pomiaru odstającego
+Tarsus skok
+Tarsus! potwierdzenie pomiaru odstającego
+Ulna przedramie
+Ulna! potwierdzenie pomiaru odstającego
+THL dziób z głową
+THL! potwierdzenie pomiaru odstającego
+Bill1 pomiar dzioba
+Bill1! potwierdzenie pomiaru odstającego
+Bill1_dis rodzaj pmiaru dzioba Bill1
+Bill2 pomiar dzioba
+Bill2! potwierdzenie pomiaru odstającego
+Bill2_dis rodzaj pomiaru dzioba Bill2
+T1-T6 odległość między szczytem 1. i 6. sterówki
+T1-T6! potwierdzenie pomiaru odstającego
+T6-TL odległość między szczytem 6. i najdłuższej sterówki
+T6-TL! potwierdzenie pomiaru odstającego
+TailA ogon mierzony w amerykański sposób
+TailA! potwierdzenie pomiaru odstającego
+WT grubość skrzydła
+WT! potwierdzenie pomiaru odstającego
+Claw pazur
+Claw! potwierdzenie pomiaru odstającego
+Emarg do której lotki emarginacja
+Notch_mm notch - w mm
+Notch_tip notch - do szczytu której pierwszorzędówki
+Parasite zapis dotyczący pasożyta
+Parasite_dis opis jakiego pasożyta/badań dotyczy zapis w Parasite
+Moult_short skrócony opis pierzenia
+N_unmoult_cov liczba nieprzepierzonych dużych pokryw
+X1 nierozpoznany zapis z specjali
+X2 nierozpoznany zapis z specjali
+X3 nierozpoznany zapis z specjali
+X4 nierozpoznany zapis z specjali
+X5 nierozpoznany zapis z specjali
+X6 nierozpoznany zapis z specjali
+Z1 rozpoznany zapis z uwag - badania czasowe
+Z1_dis opis zawartości Z1
+Z2 rozpoznany zapis z uwag - badania czasowe
+Z2_dis opis zawartości Z2
+Notes uwagi
+VerifiedPole logiczne- rekord zweryfikowany.Po kliknięciu rekord transformowany jest do DB2 i pozostałych baz
+SchemeError Błąd w schemacie - przeniesione wartości dla ignorowanych pól
+Primaries 1 LS Stadium pierzenia danego pióra
+Primaries 2 LS Stadium pierzenia danego pióra
+Primaries 3 LS Stadium pierzenia danego pióra
+Primaries 4 LS Stadium pierzenia danego pióra
+Primaries 5 LS Stadium pierzenia danego pióra
+Primaries 6 LS Stadium pierzenia danego pióra
+Primaries 7 LS Stadium pierzenia danego pióra
+Primaries 8 LS Stadium pierzenia danego pióra
+Primaries 9 LS Stadium pierzenia danego pióra
+Primaries 10 LS Stadium pierzenia danego pióra
+Primaries 11 LS Stadium pierzenia danego pióra
+Primaries 12 LS Stadium pierzenia danego pióra
+Secondaries 1 LS Stadium pierzenia danego pióra
+Secondaries 2 LS Stadium pierzenia danego pióra
+Secondaries 3 LS Stadium pierzenia danego pióra
+Secondaries 4 LS Stadium pierzenia danego pióra
+Secondaries 5 LS Stadium pierzenia danego pióra
+Secondaries 6 LS Stadium pierzenia danego pióra
+Secondaries 7 LS Stadium pierzenia danego pióra
+Secondaries 8 LS Stadium pierzenia danego pióra
+Secondaries 9 LS Stadium pierzenia danego pióra
+Secondaries 10 LS Stadium pierzenia danego pióra
+Secondaries 11 LS Stadium pierzenia danego pióra
+Secondaries 12 LS Stadium pierzenia danego pióra
+Secondaries 13 LS Stadium pierzenia danego pióra
+Secondaries 14 LS Stadium pierzenia danego pióra
+Secondaries 15 LS Stadium pierzenia danego pióra
+Secondaries 16 LS Stadium pierzenia danego pióra
+Secondaries 17 LS Stadium pierzenia danego pióra
+Secondaries 18 LS Stadium pierzenia danego pióra
+Secondaries 19 LS Stadium pierzenia danego pióra
+Secondaries 20 LS Stadium pierzenia danego pióra
+Secondaries 21 LS Stadium pierzenia danego pióra
+Secondaries 22 LS Stadium pierzenia danego pióra
+Secondaries 23 LS Stadium pierzenia danego pióra
+Secondaries 24 LS Stadium pierzenia danego pióra
+Secondaries 25 LS Stadium pierzenia danego pióra
+Secondaries 26 LS Stadium pierzenia danego pióra
+Secondaries 27 LS Stadium pierzenia danego pióra
+Secondaries 28 LS Stadium pierzenia danego pióra
+Secondaries 29 LS Stadium pierzenia danego pióra
+Secondaries 30 LS Stadium pierzenia danego pióra
+Secondaries 31 LS Stadium pierzenia danego pióra
+Secondaries 32 LS Stadium pierzenia danego pióra
+Secondaries 33 LS Stadium pierzenia danego pióra
+Secondaries 34 LS Stadium pierzenia danego pióra
+Secondaries 35 LS Stadium pierzenia danego pióra
+Secondaries 36 LS Stadium pierzenia danego pióra
+Secondaries 37 LS Stadium pierzenia danego pióra
+Tertials 1 LS Stadium pierzenia danego pióra
+Tertials 2 LS Stadium pierzenia danego pióra
+Tertials 3 LS Stadium pierzenia danego pióra
+Tail f. 1 LS Stadium pierzenia danego pióra
+Tail f. 2 LS Stadium pierzenia danego pióra
+Tail f. 3 LS Stadium pierzenia danego pióra
+Tail f. 4 LS Stadium pierzenia danego pióra
+Tail f. 5 LS Stadium pierzenia danego pióra
+Tail f. 6 LS Stadium pierzenia danego pióra
+Tail f. 7 LS Stadium pierzenia danego pióra
+Tail f. 8 LS Stadium pierzenia danego pióra
+Tail f. 9 LS Stadium pierzenia danego pióra
+Tail f. 10 LS Stadium pierzenia danego pióra
+Primaries 1 RS Stadium pierzenia danego pióra
+Primaries 2 RS Stadium pierzenia danego pióra
+Primaries 3 RS Stadium pierzenia danego pióra
+Primaries 4 RS Stadium pierzenia danego pióra
+Primaries 5 RS Stadium pierzenia danego pióra
+Primaries 6 RS Stadium pierzenia danego pióra
+Primaries 7 RS Stadium pierzenia danego pióra
+Primaries 8 RS Stadium pierzenia danego pióra
+Primaries 9 RS Stadium pierzenia danego pióra
+Primaries 10 RS Stadium pierzenia danego pióra
+Primaries 11 RS Stadium pierzenia danego pióra
+Primaries 12 RS Stadium pierzenia danego pióra
+Secondaries 1 RS Stadium pierzenia danego pióra
+Secondaries 2 RS Stadium pierzenia danego pióra
+Secondaries 3 RS Stadium pierzenia danego pióra
+Secondaries 4 RS Stadium pierzenia danego pióra
+Secondaries 5 RS Stadium pierzenia danego pióra
+Secondaries 6 RS Stadium pierzenia danego pióra
+Secondaries 7 RS Stadium pierzenia danego pióra
+Secondaries 8 RS Stadium pierzenia danego pióra
+Secondaries 9 RS Stadium pierzenia danego pióra
+Secondaries 10 RS Stadium pierzenia danego pióra
+Secondaries 11 RS Stadium pierzenia danego pióra
+Secondaries 12 RS Stadium pierzenia danego pióra
+Secondaries 13 RS Stadium pierzenia danego pióra
+Secondaries 14 RS Stadium pierzenia danego pióra
+Secondaries 15 RS Stadium pierzenia danego pióra
+Secondaries 16 RS Stadium pierzenia danego pióra
+Secondaries 17 RS Stadium pierzenia danego pióra
+Secondaries 18 RS Stadium pierzenia danego pióra
+Secondaries 19 RS Stadium pierzenia danego pióra
+Secondaries 20 RS Stadium pierzenia danego pióra
+Secondaries 21 RS Stadium pierzenia danego pióra
+Secondaries 22 RS Stadium pierzenia danego pióra
+Secondaries 23 RS Stadium pierzenia danego pióra
+Secondaries 24 RS Stadium pierzenia danego pióra
+Secondaries 25 RS Stadium pierzenia danego pióra
+Secondaries 26 RS Stadium pierzenia danego pióra
+Secondaries 27 RS Stadium pierzenia danego pióra
+Secondaries 28 RS Stadium pierzenia danego pióra
+Secondaries 29 RS Stadium pierzenia danego pióra
+Secondaries 30 RS Stadium pierzenia danego pióra
+Secondaries 31 RS Stadium pierzenia danego pióra
+Secondaries 32 RS Stadium pierzenia danego pióra
+Secondaries 33 RS Stadium pierzenia danego pióra
+Secondaries 34 RS Stadium pierzenia danego pióra
+Secondaries 35 RS Stadium pierzenia danego pióra
+Secondaries 36 RS Stadium pierzenia danego pióra
+Secondaries 37 RS Stadium pierzenia danego pióra
+Tertials 1 RS Stadium pierzenia danego pióra
+Tertials 2 RS Stadium pierzenia danego pióra
+Tertials 3 RS Stadium pierzenia danego pióra
+Tail f. 1 RS Stadium pierzenia danego pióra
+Tail f. 2 RS Stadium pierzenia danego pióra
+Tail f. 3 RS Stadium pierzenia danego pióra
+Tail f. 4 RS Stadium pierzenia danego pióra
+Tail f. 5 RS Stadium pierzenia danego pióra
+Tail f. 6 RS Stadium pierzenia danego pióra
+Tail f. 7 RS Stadium pierzenia danego pióra
+Tail f. 8 RS Stadium pierzenia danego pióra
+Tail f. 9 RS Stadium pierzenia danego pióra
+Tail f. 10 RS Stadium pierzenia danego pióra
