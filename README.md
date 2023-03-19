@@ -4,7 +4,7 @@ Program do detekcji i poprawiania wadliwych wpisów w bazie danych Stacji Badani
 
 ## Motywacja
 
-Uniwersytet Gdański organizuje kilka razy do roku wyjazdy Akcji Bałtyckiej (https://akbalt.ug.edu.pl/), podczas której badacze zbierają dane o wędrówkach ptaków. W ramach tych wyjazdów badacze wypełniają karty badawcze, które następnie są wpisywane do bazy danych. Wpisywanie danych do bazy danych jest czasochłonne i wymaga dokładności. Wprowadzanie błędów jest częstym zjawiskiem, co powoduje, że niektóre dane są niepoprawne. Program Regulus ma na celu wykrywanie i poprawianie błędów w bazie danych.
+Uniwersytet Gdański organizuje kilka razy do roku wyjazdy Akcji Bałtyckiej (https://akbalt.ug.edu.pl/), podczas której badacze zbierają dane o wędrówkach ptaków. W ramach tych wyjazdów wypełniane są karty badawcze, które następnie są wpisywane do bazy danych. Proces wpisywania danych jest pracochłonny i wymaga dokładności. Wprowadzanie błędów jest częstym zjawiskiem, co powoduje, że niektóre dane są niepoprawne. Program Regulus ma na celu wykrywanie i poprawianie błędnie wpisanych rekordów.
 
 W ramach programu wyliczane będą średnie i odchylenia standardowe dla parametrów pomiarowych ptaków, m.in. długości skrzydła i rozmiaru ptaka w zależności od gatunków. Następnie wyszukiwane będą wpisy, w których wartości parametrów pomiarowych są odstające. Wpisy z odstającymi wartościami zostaną oznaczone jako błędne i zostaną wyświetlone w specjalnym widoku. Użytkownik będzie mógł je poprawić lub oznaczyć jako poprawne.
 
@@ -13,7 +13,7 @@ W ramach programu wyliczane będą średnie i odchylenia standardowe dla paramet
 1. [ ] Stworzyć moduł do pobierania danych z bazy danych Access
 2. [ ] Stworzyć moduł do aktualizacji danych w bazie danych Access
 3. [ ] Stworzyć moduł do pobierania danych z pliku .csv (do testów)
-4. [ ] Stworzyć serwis wyliczający dane statystyczne dla parametrów pomiarowych ptaków
+4. [ ] Stworzyć moduł wyliczający dane statystyczne dla parametrów pomiarowych ptaków
 5. [ ] Stworzyć widok główny programu. W widoku powinny się znajdywać:
    - [ ] lista wpisów z bazy danych:
       - [ ] wszystkie
