@@ -32,7 +32,8 @@ public class AccessBirdRecordsDbSourceTests
                 Sex = "F",
                 Wing = 5,
                 Tail = 10,
-                Mass = 15
+                Mass = 15,
+                DT = new DateTime(2020,01,02,03,00,00)
             }
         };
 
@@ -45,7 +46,8 @@ public class AccessBirdRecordsDbSourceTests
                 Sex = "M",
                 Wing = 6,
                 Tail = 11,
-                Weight = 16
+                Weight = 16,
+                DT = new DateTime(2021, 01, 02, 03, 00, 00)
             }
         };
 
@@ -59,6 +61,7 @@ public class AccessBirdRecordsDbSourceTests
         Assert.AreEqual(5, records[0].Wing);
         Assert.AreEqual(10, records[0].Tail);
         Assert.AreEqual(15, records[0].Weight);
+        Assert.AreEqual(new DateTime(2020, 01, 02, 03, 00, 00), records[0].DateTime);
 
         Assert.AreEqual(2, records[1].Id);
         Assert.AreEqual("PHY.LUS", records[1].SpeciesCode);
@@ -66,5 +69,6 @@ public class AccessBirdRecordsDbSourceTests
         Assert.AreEqual(6, records[1].Wing);
         Assert.AreEqual(11, records[1].Tail);
         Assert.AreEqual(16, records[1].Weight);
+        Assert.AreEqual(new DateTime(2021, 01, 02, 03, 00, 00), records[1].DateTime);
     }
 }

@@ -6,7 +6,7 @@ namespace RegulusTests;
 [TestClass]
 public class CsvBirdRecordsOldDbSourceTests
 {
-    CsvBirdRecordsOldDbSource source;
+    CsvBirdRecordsOldDbSource? source;
 
     [TestInitialize]
     public void Initialize()

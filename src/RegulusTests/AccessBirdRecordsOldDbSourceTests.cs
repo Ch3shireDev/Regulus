@@ -5,12 +5,12 @@ namespace RegulusTests;
 [TestClass]
 public class AccessBirdRecordsOldDbSourceTests
 {
-    private AccessBirdRecordsOldDbBirdsRecordsSource source;
+    private AccessBirdRecordsOldDbSource? source;
 
     [TestInitialize]
     public void Initialize()
     {
-        source = new AccessBirdRecordsOldDbBirdsRecordsSource();
+        source = new AccessBirdRecordsOldDbSource();
     }
 
     [TestMethod]

@@ -13,16 +13,16 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_Plik" FontSize="14">
-                <MenuItem Header="_Otwórz"/>
+                <MenuItem Header="_Otwórz" Command="{Binding LoadDatabaseCommand}"/>
             </MenuItem>
         </Menu>
         <Grid>
             <TabControl Margin="10">
                 <TabItem Header="Okno główne">
-                    <views:RecordsView />
+                    <views:RecordsView DataContext="{Binding RecordsViewModel}" />
                 </TabItem>
                 <TabItem Header="Konfiguracja">
-                    <views:ConfigView />
+                    <views:ConfigView DataContext="{Binding ConfigViewModel}"/>
                 </TabItem>
             </TabControl>
         </Grid>

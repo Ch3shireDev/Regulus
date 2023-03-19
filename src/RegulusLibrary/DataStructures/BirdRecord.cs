@@ -8,4 +8,5 @@ public record BirdRecord
     public double? Wing { get; set; }
     public double? Tail { get; set; }
     public double? Weight { get; set; }
+    public DateTime? DateTime{ get; set; }
 }

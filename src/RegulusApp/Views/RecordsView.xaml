@@ -14,6 +14,42 @@
             <RowDefinition />
             <RowDefinition Height="200" />
         </Grid.RowDefinitions>
-        <ListView Margin="10" />
+        <ListView Margin="10" ItemsSource="{Binding BirdRecords}" >
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Width="80" Header="Id" DisplayMemberBinding="{Binding Id}"/>
+                        <GridViewColumn Width="120" Header="Species Code" DisplayMemberBinding="{Binding SpeciesCode}"/>
+                        <GridViewColumn Width="50" Header="Sex" DisplayMemberBinding="{Binding Sex}"/>
+                        <GridViewColumn Width="100" Header="Wing" DisplayMemberBinding="{Binding Wing}"/>
+                        <GridViewColumn Width="100" Header="Tail" DisplayMemberBinding="{Binding Tail}"/>
+                        <GridViewColumn Width="100" Header="Weight" DisplayMemberBinding="{Binding Weight}"/>
+                        <GridViewColumn Width="180" Header="Date" DisplayMemberBinding="{Binding DateTime}"/>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            <Button 
+                Grid.Column="0"
+                Margin="10"
+                Padding="20,5"
+                Command="{Binding LoadDatabaseCommand}">Załaduj dane</Button>
+                <ProgressBar 
+                    Grid.Column="1" 
+                    Margin="10"
+                    Value="{Binding LoadingProgressValue}"
+                    />
+            </Grid>
+        </Grid>
     </Grid>
 </UserControl>

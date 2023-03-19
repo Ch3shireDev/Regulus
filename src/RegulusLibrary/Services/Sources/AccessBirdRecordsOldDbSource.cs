@@ -3,13 +3,13 @@ using RegulusLibrary.Services.Sources.DataStructures;
 
 namespace RegulusLibrary.Services.Sources;
 
-public class AccessBirdRecordsOldDbBirdsRecordsSource : IBirdRecordsOldDbSource
+public class AccessBirdRecordsOldDbSource : IBirdRecordsOldDbSource
 {
-    public AccessBirdRecordsOldDbBirdsRecordsSource()
+    public AccessBirdRecordsOldDbSource()
     {
     }
 
-    public AccessBirdRecordsOldDbBirdsRecordsSource(string fileName, string tableName)
+    public AccessBirdRecordsOldDbSource(string fileName, string tableName)
     {
         FileName = fileName;
         TableName = tableName;
@@ -36,16 +36,16 @@ public class AccessBirdRecordsOldDbBirdsRecordsSource : IBirdRecordsOldDbSource
                 {
                     IDR_Podab = reader["IDR_Podab"] as int? ?? 0,
                     IdrZesz = reader["IdrZesz"] as int?,
-                    IdBase = reader["IdBase"] as Int16?,
+                    IdBase = reader["IdBase"] as short?,
                     IdInp = reader["IdInp"] as int?,
                     Sta = reader["Sta"] as string,
                     Row = reader["Row"] as int?,
                     ST = reader["ST"] as string,
                     CoStaSit = reader["CoStaSit"] as string,
-                    Year = reader["Year"] as Int16?,
+                    Year = reader["Year"] as short?,
                     Seas = reader["Seas"] as string,
                     Date = reader["Date"] as DateTime?,
-                    Hour = reader["Hour"] as Int16?,
+                    Hour = reader["Hour"] as short?,
                     Ring = reader["Ring"] as string,
                     Status = reader["Status"] as string,
                     Spec = reader["Spec"] as string,
@@ -75,7 +75,7 @@ public class AccessBirdRecordsOldDbBirdsRecordsSource : IBirdRecordsOldDbSource
                     TS_Import = reader["TS_Import"] as DateTime?,
                     TS_Zesz = reader["TS_Zesz"] as DateTime?,
                     Sel = reader["Sel"] as bool?,
-                    MD = reader["MD"] as Int16?,
+                    MD = reader["MD"] as short?,
                     RNG = reader["RNG"] as string,
                     AgeT = reader["AgeT"] as string,
                     DT = reader["DT"] as DateTime?,

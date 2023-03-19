@@ -1,12 +1,20 @@
-﻿using System;
+﻿using RegulusLibrary.DataStructures;
+using RegulusLibrary.Services.Loaders;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace RegulusApp.Models
+namespace RegulusApp.Models;
+
+public class MainModel
 {
-    public class MainModel
+    private readonly IBirdRecordsLoader _birdRecordsLoader;
+
+    public MainModel(IBirdRecordsLoader birdRecordsLoader)
     {
+        _birdRecordsLoader = birdRecordsLoader;
+
+        RecordsModel = new RecordsModel(birdRecordsLoader);
     }
+
+    public RecordsModel RecordsModel { get; set; }
 }

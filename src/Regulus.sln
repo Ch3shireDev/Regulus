@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegulusCli", "RegulusCli\Re
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegulusApp", "RegulusApp\RegulusApp.csproj", "{458ACCAB-EAC7-4CCF-B8B5-6B94C7D4308D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegulusAppTests", "RegulusAppTests\RegulusAppTests.csproj", "{3B52F3C2-0190-428A-A703-E751B0977C34}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{458ACCAB-EAC7-4CCF-B8B5-6B94C7D4308D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{458ACCAB-EAC7-4CCF-B8B5-6B94C7D4308D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{458ACCAB-EAC7-4CCF-B8B5-6B94C7D4308D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B52F3C2-0190-428A-A703-E751B0977C34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B52F3C2-0190-428A-A703-E751B0977C34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B52F3C2-0190-428A-A703-E751B0977C34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B52F3C2-0190-428A-A703-E751B0977C34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
