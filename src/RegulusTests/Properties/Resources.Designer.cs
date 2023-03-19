@@ -63,9 +63,19 @@ namespace RegulusTests.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] access_example {
+        internal static byte[] access_example_new_db {
             get {
-                object obj = ResourceManager.GetObject("access_example", resourceCulture);
+                object obj = ResourceManager.GetObject("access_example_new_db", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] access_example_old_db {
+            get {
+                object obj = ResourceManager.GetObject("access_example_old_db", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -73,9 +83,19 @@ namespace RegulusTests.Properties {
         /// <summary>
         ///   Looks up a localized string similar to IDR_Podab,IdBaza,IdSezon,IdZesz,Ztyp,Znr,Zpage,Zrow,CoStaSit,Year,Seas,Date,Pole13,Date2,MD,Hour,Pole17,Ring Type,Ring Ser,Ring No,Ring,Pole22,Stat,Net,Species Code,English Name,Latin Name,AddInfo,Sex,Pole30,&apos;?&apos;,Euring,Age,Pole34,Pole35,WIEK,SZATA,Fat,Pole39,Tip,Pole41,M1,Pole43,M2,Pole45,M3,Pole47,M4,Pole49,M5,Pole51,M6,Pole53,D2,Pole55,D3,Pole57,D4,Pole59,D5,Pole61,D6,Pole63,D7,Pole65,D8,Pole67,Extra 1,Pole69,Extra 2,Pole71,Wing,Pole73,Tail,Pole75,Weight,Pole77,DW,Notch/Dziób,Pole80,LocN/Pazur/Kipp,Pole82 [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string csv_example {
+        internal static string csv_example_new_db {
             get {
-                return ResourceManager.GetString("csv_example", resourceCulture);
+                return ResourceManager.GetString("csv_example_new_db", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IDR_Podab,IdrZesz,IdBase,IdInp,Sta,Row,ST,CoStaSit,Year,Seas,Date,Hour,Ring,Status,Spec,Sex,Age,Ringer,Mass,Fat,Wing,Tail,D2,D3,D4,D5,D6,D7,D8,PP,P1,P2,P3,P4,P5,P6,Notes,OK,TS_Import,TS_Zesz,Sel,MD,RNG,AgeT,DT,Ztyp,Znr,P1PC,P2PC,P1P2,Kipp,Tarsus,THL,Bill1,Bill2,Claw,Emarg,Notch_mm,Notch_tip,Moult_short,Parasite,N_unmoult_cov,X1,X2,X3,X4,X5,X6,Net,SSMA_TimeStamp
+        ///1,128,2007,NULL,BU,129,BK,PL.BK.01,1967,A,1967-08-16 00:00:00,18,J634038,O,PHY.LUS,NULL,I,NULL,9,0,61,45,5,0,0,2,6,8,10,NULL,NULL,NULL,NULL,NULL,+4 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string csv_example_old_db {
+            get {
+                return ResourceManager.GetString("csv_example_old_db", resourceCulture);
             }
         }
     }

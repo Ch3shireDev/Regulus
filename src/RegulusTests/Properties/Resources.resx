@@ -118,10 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="access_example" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\access_example.mdb;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="access_example_new_db" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\access_example_new_db.mdb;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="csv_example" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\csv_example.csv;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="access_example_old_db" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\access_example_old_db.mdb;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="csv_example_new_db" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\csv_example_new_db.csv;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="csv_example_old_db" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\csv_example_old_db.csv;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

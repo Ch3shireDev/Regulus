@@ -1,28 +1,29 @@
 ﻿using RegulusLibrary.Services.Sources;
-using RegulusTests.Properties;
 
 namespace RegulusTests;
 
 [TestClass]
-public class CsvNewDbBirdRecordsSourceTests
+public class AccessBirdRecordsNewDbSourceTests
 {
-    private CsvNewDbBirdRecordsSource? source;
+    private AccessBirdRecordsNewDbSource? source;
 
     [TestInitialize]
     public void Initialize()
     {
-        source = new CsvNewDbBirdRecordsSource();
+        source = new AccessBirdRecordsNewDbSource();
     }
 
     [TestMethod]
     public void ReadRowTest()
     {
-        source.StringReader = new StringReader(Resources.csv_example);
-        var birds = source.Read().ToList();
+        source.FileName = @"Resources\access_example_new_db.mdb";
+        source.TableName = "example table";
 
-        var birb = birds[0];
-        Assert.AreEqual(100, birds.Count);
+        var data = source.Read().ToArray();
 
+        Assert.AreEqual(3, data.Length);
+
+        var birb = data[0];
 
         Assert.AreEqual(1924534, birb.IDR_Podab);
         Assert.AreEqual(15471, birb.IdBaza);

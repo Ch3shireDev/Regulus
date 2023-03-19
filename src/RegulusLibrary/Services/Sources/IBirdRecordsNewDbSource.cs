@@ -2,7 +2,7 @@
 
 namespace RegulusLibrary.Services.Sources;
 
-public interface INewDbBirdRecordsSource
+public interface IBirdRecordsNewDbSource
 {
     public IEnumerable<NewDbBirdRecord> Read();
 }

@@ -3,19 +3,21 @@ using RegulusLibrary.Services.Sources.DataStructures;
 
 namespace RegulusLibrary.Services.Sources;
 
-public class AccessNewDbBirdRecordsSource : INewDbBirdRecordsSource
+public class AccessBirdRecordsNewDbSource : IBirdRecordsNewDbSource
 {
-    public AccessNewDbBirdRecordsSource(string connectionString, string tableName)
+    public AccessBirdRecordsNewDbSource(string fileName, string tableName)
     {
-        ConnectionString = connectionString;
+        FileName = fileName;
         TableName = tableName;
     }
 
-    public AccessNewDbBirdRecordsSource()
+    public AccessBirdRecordsNewDbSource()
     {
     }
 
-    public string? ConnectionString { get; set; }
+    public string? FileName{ get; set; }
+    public string? ConnectionString => $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={FileName};Persist Security Info=False;";
+
     public string? TableName { get; set; }
 
     public IEnumerable<NewDbBirdRecord> Read()

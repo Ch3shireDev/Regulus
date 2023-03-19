@@ -1,31 +1,28 @@
 ﻿using RegulusLibrary.Services.Sources;
+using RegulusTests.Properties;
 
 namespace RegulusTests;
 
 [TestClass]
-public class AccessNewDbBirdRecordsSourceTests
+public class CsvBirdRecordsNewDbSourceTests
 {
-    private AccessNewDbBirdRecordsSource? source;
+    private CsvBirdRecordsNewDbSource? source;
 
     [TestInitialize]
     public void Initialize()
     {
-        source = new AccessNewDbBirdRecordsSource();
+        source = new CsvBirdRecordsNewDbSource();
     }
 
     [TestMethod]
     public void ReadRowTest()
     {
-        var filename = @"Resources\access_example.mdb";
+        source.StringReader = new StringReader(Resources.csv_example_new_db);
+        var birds = source.Read().ToList();
 
-        source.ConnectionString = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={filename};Persist Security Info=False;";
-        source.TableName = "example table";
+        var birb = birds[0];
+        Assert.AreEqual(100, birds.Count);
 
-        var data = source.Read().ToArray();
-
-        Assert.AreEqual(3, data.Length);
-
-        var birb = data[0];
 
         Assert.AreEqual(1924534, birb.IDR_Podab);
         Assert.AreEqual(15471, birb.IdBaza);
