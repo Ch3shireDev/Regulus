@@ -15,7 +15,7 @@ public class AccessBirdRecordsNewDbSource : IBirdRecordsNewDbSource
     {
     }
 
-    public string? FileName{ get; set; }
+    public string? FileName { get; set; }
     public string? ConnectionString => $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={FileName};Persist Security Info=False;";
 
     public string? TableName { get; set; }

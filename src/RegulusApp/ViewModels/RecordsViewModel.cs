@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Input;
 using RegulusApp.Helpers;
 using RegulusApp.Models;
@@ -26,10 +27,26 @@ public class RecordsViewModel : ViewModelBase
     public ObservableCollection<BirdRecord> BirdRecords { get; } = new ObservableCollection<BirdRecord>();
     public ICommand LoadDatabaseCommand => new RelayCommand(p => LoadDatabase());
     public double LoadingProgressValue { get; set; }
+    public ICommand SaveDatabaseToCsvCommand => new RelayCommand(p => SaveDatabaseToCsv());
+    public double SavingProgressValue { get; set; }
+
+    private void SaveDatabaseToCsv()
+    {
+        var records = BirdRecords.ToList();
+        if (records.Count == 0) return;
+        var filepath = _filePathLoader?.GetSaveFilePath();
+        var parameters = new BirdRecordsSaverParameters
+        {
+            Filename = filepath,
+            BirdRecords = records
+        };
+
+        Model?.WriteRecordsToCsv(parameters);
+    }
 
     public void LoadDatabase()
     {
-        var filepath = _filePathLoader?.GetFilePath();
+        var filepath = _filePathLoader?.GetOpenFilePath();
         if (string.IsNullOrWhiteSpace(filepath)) return;
         var parameters = new BirdRecordsLoaderParameters { Filename = filepath };
         LoadDatabase(parameters);

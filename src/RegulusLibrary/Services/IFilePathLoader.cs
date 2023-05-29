@@ -2,5 +2,6 @@
 
 public interface IFilePathLoader
 {
-    string GetFilePath();
+    string GetOpenFilePath();
+    string GetSaveFilePath();
 }

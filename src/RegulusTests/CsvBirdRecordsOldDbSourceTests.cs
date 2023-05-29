@@ -6,7 +6,7 @@ namespace RegulusTests;
 [TestClass]
 public class CsvBirdRecordsOldDbSourceTests
 {
-    CsvBirdRecordsOldDbSource? source;
+    private CsvBirdRecordsOldDbSource? source;
 
     [TestInitialize]
     public void Initialize()
@@ -22,7 +22,7 @@ public class CsvBirdRecordsOldDbSourceTests
         var results = source.Read().ToList();
         var result = results[0];
         Assert.AreEqual(1, results.Count);
-        
+
         Assert.AreEqual(1, result.IDR_Podab);
         Assert.AreEqual(128, result.IdrZesz);
         Assert.AreEqual(1, result.IDR_Podab);

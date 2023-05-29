@@ -1,12 +1,13 @@
 ﻿using RegulusLibrary.DataStructures;
 using RegulusLibrary.Services.Sources;
+using RegulusLibrary.Services.Sources.DataStructures;
 
 namespace RegulusLibrary.Services;
 
 public class AccessBirdRecordsDbSource : IBirdRecordsDbSource
 {
-    private readonly IBirdRecordsNewDbSource _newDbSource;
-    private readonly IBirdRecordsOldDbSource _oldDbSource;
+    private readonly IBirdRecordsNewDbSource? _newDbSource;
+    private readonly IBirdRecordsOldDbSource? _oldDbSource;
 
     public AccessBirdRecordsDbSource(IBirdRecordsOldDbSource oldDbSource, IBirdRecordsNewDbSource newDbSource)
     {
@@ -16,8 +17,8 @@ public class AccessBirdRecordsDbSource : IBirdRecordsDbSource
 
     public IEnumerable<BirdRecord> Read()
     {
-        var oldRecords = _oldDbSource.Read().ToList();
-        var newRecords = _newDbSource.Read().ToList();
+        var oldRecords = _oldDbSource?.Read()?.ToList() ?? new List<OldDbBirdRecord>();
+        var newRecords = _newDbSource?.Read()?.ToList() ?? new List<NewDbBirdRecord>();
 
         var records = new List<BirdRecord>();
 
@@ -28,9 +29,9 @@ public class AccessBirdRecordsDbSource : IBirdRecordsDbSource
                 Id = oldRecord.IDR_Podab,
                 SpeciesCode = oldRecord.Spec,
                 Sex = oldRecord.Sex,
-                Wing = oldRecord.Wing,
-                Tail = oldRecord.Tail,
-                Weight = oldRecord.Mass,
+                Wing = Convert.ToDecimal(oldRecord.Wing),
+                Tail = Convert.ToDecimal(oldRecord.Tail),
+                Weight = Convert.ToDecimal(oldRecord.Mass),
                 DateTime = oldRecord.DT
             };
 
@@ -44,9 +45,9 @@ public class AccessBirdRecordsDbSource : IBirdRecordsDbSource
                 Id = Convert.ToInt32(newRecord.IDR_Podab ?? 0),
                 SpeciesCode = newRecord.SpeciesCode,
                 Sex = newRecord.Sex,
-                Wing = newRecord.Wing,
-                Tail = newRecord.Tail,
-                Weight = newRecord.Weight,
+                Wing = Convert.ToDecimal(newRecord.Wing),
+                Tail = Convert.ToDecimal(newRecord.Tail),
+                Weight = Convert.ToDecimal(newRecord.Weight),
                 DateTime = newRecord.DT
             };
 

@@ -1,9 +1,8 @@
 using RegulusApp.Models;
 using RegulusApp.ViewModels;
-using RegulusAppTests.Mockups;
 using RegulusLibrary.DataStructures;
 
-namespace RegulusAppTests;
+namespace RegulusAppTests.Mockups;
 
 [TestClass]
 public class MainViewModelTests
@@ -12,14 +11,16 @@ public class MainViewModelTests
     private MockBirdRecordsLoader? loader;
     private MainModel? model;
     private MainViewModel? viewModel;
+    private MockBirdRecordsWriter? writer;
 
     [TestInitialize]
     public void Initialize()
     {
         filePathLoader = new MockFilePathLoader();
         loader = new MockBirdRecordsLoader();
+        writer = new MockBirdRecordsWriter();
 
-        model = new MainModel(loader);
+        model = new MainModel(loader, writer);
         viewModel = new MainViewModel(model, filePathLoader);
     }
 
@@ -32,7 +33,7 @@ public class MainViewModelTests
         viewModel.LoadDatabase();
 
         Assert.AreEqual(2, viewModel.RecordsViewModel.BirdRecords.Count);
-        Assert.AreEqual(true, filePathLoader.IsGet);
+        Assert.AreEqual(true, filePathLoader.IsGetOpen);
         Assert.AreEqual("test", loader.Parameters.Filename);
     }
 }

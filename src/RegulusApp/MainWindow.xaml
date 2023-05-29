@@ -6,14 +6,14 @@
         xmlns:views="clr-namespace:RegulusApp.Views"
         xmlns:viewModels="clr-namespace:RegulusApp.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowStyle="ToolWindow">
+        Title="MainWindow" Height="600" Width="1000" WindowStyle="ToolWindow">
     <d:Window.DataContext>
-        <viewModels:MainViewModel/>
+        <viewModels:MainViewModel />
     </d:Window.DataContext>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="_Plik" FontSize="14">
-                <MenuItem Header="_Otwórz" Command="{Binding LoadDatabaseCommand}"/>
+            <MenuItem Header="_Plik">
+                <MenuItem Header="_Otwórz" Command="{Binding LoadDatabaseCommand}" />
             </MenuItem>
         </Menu>
         <Grid>
@@ -22,7 +22,7 @@
                     <views:RecordsView DataContext="{Binding RecordsViewModel}" />
                 </TabItem>
                 <TabItem Header="Konfiguracja">
-                    <views:ConfigView DataContext="{Binding ConfigViewModel}"/>
+                    <views:ConfigView DataContext="{Binding ConfigViewModel}" />
                 </TabItem>
             </TabControl>
         </Grid>

@@ -9,16 +9,19 @@ namespace RegulusAppTests;
 public class RecordsViewModelTests
 {
     private MockBirdRecordsLoader? loader;
-    private MockFilePathLoader? pathLoader;
     private RecordsModel? model;
+    private MockFilePathLoader? pathLoader;
     private RecordsViewModel? viewModel;
+    private MockBirdRecordsWriter? writer;
+
 
     [TestInitialize]
     public void Initialize()
     {
         pathLoader = new MockFilePathLoader();
         loader = new MockBirdRecordsLoader();
-        model = new RecordsModel(loader);
+        writer = new MockBirdRecordsWriter();
+        model = new RecordsModel(loader, writer);
         viewModel = new RecordsViewModel(model, pathLoader);
     }
 
@@ -31,7 +34,7 @@ public class RecordsViewModelTests
         viewModel.LoadDatabase();
 
         Assert.AreEqual(2, viewModel.BirdRecords.Count);
-        Assert.AreEqual(true, pathLoader.IsGet);
+        Assert.AreEqual(true, pathLoader.IsGetOpen);
         Assert.AreEqual("test", loader.Parameters.Filename);
     }
 }

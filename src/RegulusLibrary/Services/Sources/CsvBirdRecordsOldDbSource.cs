@@ -5,20 +5,20 @@ using RegulusLibrary.Services.Sources.DataStructures;
 
 namespace RegulusLibrary.Services.Sources;
 
-public class CsvBirdRecordsNewDbSource : IBirdRecordsNewDbSource
+public class CsvBirdRecordsOldDbSource : IBirdRecordsOldDbSource
 {
-    public CsvBirdRecordsNewDbSource(StringReader stringReader)
+    public CsvBirdRecordsOldDbSource(StringReader stringReader)
     {
         StringReader = stringReader;
     }
 
-    public CsvBirdRecordsNewDbSource()
+    public CsvBirdRecordsOldDbSource()
     {
     }
 
     public StringReader? StringReader { get; set; }
 
-    public IEnumerable<NewDbBirdRecord> Read()
+    public IEnumerable<OldDbBirdRecord> Read()
     {
         var configuration = new CsvConfiguration(CultureInfo.InvariantCulture);
         using var csvReader = new CsvReader(StringReader, configuration);
@@ -28,7 +28,7 @@ public class CsvBirdRecordsNewDbSource : IBirdRecordsNewDbSource
         csvReader.Context.TypeConverterOptionsCache.GetOptions<DateTime?>().NullValues.AddRange(new[] { "NULL", "0" });
         csvReader.Context.TypeConverterOptionsCache.GetOptions<int?>().NullValues.Add("NULL");
 
-        var records = csvReader.GetRecords<NewDbBirdRecord>().ToList();
+        var records = csvReader.GetRecords<OldDbBirdRecord>().ToList();
         return records;
     }
 }

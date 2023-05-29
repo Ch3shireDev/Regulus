@@ -11,7 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegulusCli", "RegulusCli\Re
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegulusApp", "RegulusApp\RegulusApp.csproj", "{458ACCAB-EAC7-4CCF-B8B5-6B94C7D4308D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegulusAppTests", "RegulusAppTests\RegulusAppTests.csproj", "{3B52F3C2-0190-428A-A703-E751B0977C34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegulusAppTests", "RegulusAppTests\RegulusAppTests.csproj", "{3B52F3C2-0190-428A-A703-E751B0977C34}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0938FD6F-23AC-4BF0-ADBF-3D878BD788FC}"
+	ProjectSection(SolutionItems) = preProject
+		..\README.md = ..\README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
