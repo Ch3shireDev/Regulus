@@ -29,6 +29,15 @@ public class RecordsViewModel : ViewModelBase
     public ICommand SaveDatabaseToCsvCommand => new RelayCommand(p => SaveDatabaseToCsv());
     public double LoadingProgressValue { get; set; }
     public double SavingProgressValue { get; set; }
+    public ICommand ValidateDataCommand => new RelayCommand(p => ValidateData());
+
+    private void ValidateData()
+    {
+        foreach (var record in BirdRecords)
+        {
+            record.IsValid = Model?.CheckIsValid(record) ?? true;
+        }
+    }
 
     public void LoadDatabase()
     {
@@ -48,6 +57,8 @@ public class RecordsViewModel : ViewModelBase
         var records = Model?.GetRecordWrappers(parameters);
         if (records == null) return;
         foreach (var record in records) BirdRecords.Add(record);
+
+        ValidateData();
     }
     private void SaveDatabaseToCsv()
     {

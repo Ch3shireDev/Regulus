@@ -2,9 +2,9 @@
 using RegulusApp.Models;
 using RegulusApp.Services;
 using RegulusApp.ViewModels;
-using RegulusLibrary.Services;
 using RegulusLibrary.Services.Loaders;
 using RegulusLibrary.Services.Processors;
+using RegulusLibrary.Services.Validators;
 using RegulusLibrary.Services.Writers;
 
 namespace RegulusApp;
@@ -18,7 +18,13 @@ public partial class App : Application
         var loader = new BirdRecordsLoader();
         var writer = new BirdsRecordsCsvWriter();
         var processor = new BirdRecordsProcessor();
-        var model = new MainModel(loader, writer, processor);
+        var validator = new BirdRecordsValidator
+        {
+            TailNumberOfStandardDeviations = 5,
+            WingNumberOfStandardDeviations = 2,
+            WeightNumberOfStandardDeviations = 3
+        };
+        var model = new MainModel(loader, writer, processor, validator);
         var viewModel = new MainViewModel(model, filePathLoader);
         var window = new MainWindow
         {

@@ -8,12 +8,12 @@ public class BirdRecordsProcessor : IBirdRecordsProcessor
     {
         foreach (var recordsGroup in records.GroupBy(r => r.SpeciesCode))
         {
-            var wingMean = recordsGroup.Average(r => r.Wing);
-            var wingStandardDeviation = CalculateStandardDeviation(recordsGroup.ToList().Select(r => r.Wing ?? 0).Where(w => w > 0));
-            var tailMean = recordsGroup.Average(r => r.Tail);
-            var tailStandardDeviation = CalculateStandardDeviation(recordsGroup.ToList().Select(r => r.Tail ?? 0).Where(w => w > 0));
-            var weightMean = recordsGroup.Average(r => r.Weight);
-            var weightStandardDeviation = CalculateStandardDeviation(recordsGroup.ToList().Select(r => r.Weight ?? 0).Where(w => w > 0));
+            var wingMean = GetMean(recordsGroup.ToList(), r => r.Wing);
+            var wingStandardDeviation = GetStandardDeviation(recordsGroup.ToList(), r => r.Wing);
+            var tailMean = GetMean(recordsGroup.ToList(), r => r.Tail);
+            var tailStandardDeviation = GetStandardDeviation(recordsGroup.ToList(), r => r.Tail);
+            var weightMean = GetMean(recordsGroup.ToList(), r => r.Weight);
+            var weightStandardDeviation = GetStandardDeviation(recordsGroup.ToList(), r => r.Weight);
 
             foreach (var recordWrapper in recordsGroup)
             {
@@ -40,14 +40,21 @@ public class BirdRecordsProcessor : IBirdRecordsProcessor
         }
     }
 
-
-    public static decimal CalculateStandardDeviation(IEnumerable<decimal> value)
+    private static decimal GetMean(List<BirdRecord> records, Func<BirdRecord, decimal?> selector)
     {
-        var valuesList = value.ToList();
-        if (valuesList.Count < 2) return 0;
+        var list = records.Select(r => selector(r) ?? 0).Where(r => r > 0).ToArray();
+        if (!list.Any()) return 0;
+        return list.Average();
+    }
+
+    private static decimal GetStandardDeviation(List<BirdRecord> records, Func<BirdRecord, decimal?> selector)
+    {
+        var valuesList = records.Select(r => selector(r) ?? 0).Where(r => r > 0).ToArray();
+
+        if (valuesList.Count() < 2) return 0;
         var mean = valuesList.Average();
         var sumOfSquaresOfDifferences = valuesList.Select(val => (val - mean) * (val - mean)).Sum();
-        var standardDeviation = (decimal)Math.Sqrt((double)(sumOfSquaresOfDifferences / (valuesList.Count - 1)));
+        var standardDeviation = (decimal)Math.Sqrt((double)(sumOfSquaresOfDifferences / (valuesList.Count() - 1)));
         return standardDeviation;
     }
 }

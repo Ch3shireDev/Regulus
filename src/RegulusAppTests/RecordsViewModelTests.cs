@@ -2,6 +2,7 @@ using RegulusApp.Models;
 using RegulusApp.ViewModels;
 using RegulusAppTests.Mockups;
 using RegulusLibrary.DataStructures;
+using System.ComponentModel.DataAnnotations;
 
 namespace RegulusAppTests;
 
@@ -14,7 +15,7 @@ public class RecordsViewModelTests
     private RecordsViewModel? viewModel;
     private MockBirdRecordsWriter? writer;
     private MockBirdRecordProcessor? processor;
-
+    private MockBirdRecordsValidator? validator;
 
     [TestInitialize]
     public void Initialize()
@@ -23,7 +24,8 @@ public class RecordsViewModelTests
         loader = new MockBirdRecordsLoader();
         writer = new MockBirdRecordsWriter();
         processor = new MockBirdRecordProcessor();
-        model = new RecordsModel(loader, writer, processor);
+        validator = new MockBirdRecordsValidator();
+        model = new RecordsModel(loader, writer, processor, validator);
         viewModel = new RecordsViewModel(model, pathLoader);
     }
 

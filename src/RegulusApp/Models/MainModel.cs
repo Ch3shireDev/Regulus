@@ -1,18 +1,15 @@
 ﻿using RegulusLibrary.Services.Loaders;
 using RegulusLibrary.Services.Processors;
+using RegulusLibrary.Services.Validators;
 using RegulusLibrary.Services.Writers;
 
 namespace RegulusApp.Models;
 
 public class MainModel
 {
-    private readonly IBirdRecordsLoader _birdRecordsLoader;
-
-    public MainModel(IBirdRecordsLoader birdRecordsLoader, IBirdRecordsWriter writer, IBirdRecordsProcessor processor)
+    public MainModel(IBirdRecordsLoader birdRecordsLoader, IBirdRecordsWriter writer, IBirdRecordsProcessor processor, IBirdRecordsValidator validator)
     {
-        _birdRecordsLoader = birdRecordsLoader;
-
-        RecordsModel = new RecordsModel(birdRecordsLoader, writer, processor);
+        RecordsModel = new RecordsModel(birdRecordsLoader, writer, processor, validator);
     }
 
     public RecordsModel RecordsModel { get; set; }

@@ -2,34 +2,37 @@
 using RegulusLibrary.DataStructures;
 using RegulusLibrary.Services.Loaders;
 using RegulusLibrary.Services.Processors;
+using RegulusLibrary.Services.Validators;
 using RegulusLibrary.Services.Writers;
 
 namespace RegulusApp.Models;
 
 public class RecordsModel
 {
-    private readonly IBirdRecordsLoader _birdRecordsLoader;
-    private readonly IBirdRecordsWriter _birdRecordsWriter;
-    private readonly IBirdRecordsProcessor _birdRecordsProcessor;
+    private readonly IBirdRecordsLoader _loader;
+    private readonly IBirdRecordsWriter _writer;
+    private readonly IBirdRecordsProcessor _processor;
+    private readonly IBirdRecordsValidator _validator;
 
 
-    public RecordsModel(IBirdRecordsLoader birdRecordsLoader, IBirdRecordsWriter birdRecordsWriter, IBirdRecordsProcessor birdRecordsProcessor)
+    public RecordsModel(IBirdRecordsLoader loader, IBirdRecordsWriter writer, IBirdRecordsProcessor processor, IBirdRecordsValidator validator)
     {
-        _birdRecordsLoader = birdRecordsLoader;
-        _birdRecordsWriter = birdRecordsWriter;
-        _birdRecordsProcessor = birdRecordsProcessor;
+        _loader = loader;
+        _writer = writer;
+        _processor = processor;
+        _validator = validator;
     }
 
     public IEnumerable<BirdRecordWrapper> GetRecordWrappers(BirdRecordsLoaderParameters parameters)
     {
-        var records = _birdRecordsLoader.GetRecords(parameters);
-        return _birdRecordsProcessor.Process(records);
+        var records = _loader.GetRecords(parameters);
+        return _processor.Process(records);
     }
 
 
     public void WriteRecordsToCsv(BirdRecordsSaverParameters parameters)
     {
-        _birdRecordsWriter.WriteRecords(parameters);
+        _writer.WriteRecords(parameters);
     }
 
     public List<BirdRecord> AsSimpleRecords(List<BirdRecordWrapper> records)
@@ -53,5 +56,10 @@ public class RecordsModel
         }
 
         return results;
+    }
+
+    public bool CheckIsValid(BirdRecordWrapper record)
+    {
+        return _validator.IsValid(record);
     }
 }
