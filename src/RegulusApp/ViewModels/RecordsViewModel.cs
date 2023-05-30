@@ -24,7 +24,7 @@ public class RecordsViewModel : ViewModelBase
     }
 
     private RecordsModel? Model { get; }
-    public ObservableCollection<BirdRecord> BirdRecords { get; } = new();
+    public ObservableCollection<BirdRecordWrapper> BirdRecords { get; } = new();
     public ICommand LoadDatabaseCommand => new RelayCommand(p => LoadDatabase());
     public ICommand SaveDatabaseToCsvCommand => new RelayCommand(p => SaveDatabaseToCsv());
     public double LoadingProgressValue { get; set; }

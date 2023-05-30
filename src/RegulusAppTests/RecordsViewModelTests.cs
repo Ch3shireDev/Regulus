@@ -13,6 +13,7 @@ public class RecordsViewModelTests
     private MockFilePathLoader? pathLoader;
     private RecordsViewModel? viewModel;
     private MockBirdRecordsWriter? writer;
+    private MockBirdRecordProcessor? processor;
 
 
     [TestInitialize]
@@ -21,7 +22,8 @@ public class RecordsViewModelTests
         pathLoader = new MockFilePathLoader();
         loader = new MockBirdRecordsLoader();
         writer = new MockBirdRecordsWriter();
-        model = new RecordsModel(loader, writer);
+        processor = new MockBirdRecordProcessor();
+        model = new RecordsModel(loader, writer, processor);
         viewModel = new RecordsViewModel(model, pathLoader);
     }
 
@@ -30,9 +32,12 @@ public class RecordsViewModelTests
     {
         loader.BirdRecords = new List<BirdRecord> { new BirdRecord(), new BirdRecord() };
         pathLoader.FilePath = "test";
+        processor.OutputData = new List<BirdRecordWrapper> { new BirdRecordWrapper(), new BirdRecordWrapper() };
 
         viewModel.LoadDatabase();
 
+        Assert.AreEqual(true, processor.IsProcessCalled);
+        Assert.AreEqual(2, processor.InputData.Count());
         Assert.AreEqual(2, viewModel.BirdRecords.Count);
         Assert.AreEqual(true, pathLoader.IsGetOpen);
         Assert.AreEqual("test", loader.Parameters.Filename);

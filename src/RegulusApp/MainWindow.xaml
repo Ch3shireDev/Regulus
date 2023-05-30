@@ -6,7 +6,7 @@
         xmlns:views="clr-namespace:RegulusApp.Views"
         xmlns:viewModels="clr-namespace:RegulusApp.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1000" WindowStyle="ToolWindow">
+        Title="MainWindow" Height="600" Width="1000">
     <d:Window.DataContext>
         <viewModels:MainViewModel />
     </d:Window.DataContext>

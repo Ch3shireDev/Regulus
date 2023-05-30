@@ -1,3 +1,4 @@
+using System.Collections;
 using RegulusApp.Models;
 using RegulusApp.ViewModels;
 using RegulusLibrary.DataStructures;
@@ -12,6 +13,7 @@ public class MainViewModelTests
     private MainModel? model;
     private MainViewModel? viewModel;
     private MockBirdRecordsWriter? writer;
+    private MockBirdRecordProcessor? processor;
 
     [TestInitialize]
     public void Initialize()
@@ -19,8 +21,9 @@ public class MainViewModelTests
         filePathLoader = new MockFilePathLoader();
         loader = new MockBirdRecordsLoader();
         writer = new MockBirdRecordsWriter();
+        processor = new MockBirdRecordProcessor();
 
-        model = new MainModel(loader, writer);
+        model = new MainModel(loader, writer, processor);
         viewModel = new MainViewModel(model, filePathLoader);
     }
 
@@ -29,9 +32,12 @@ public class MainViewModelTests
     {
         loader.BirdRecords = new List<BirdRecord> { new BirdRecord(), new BirdRecord() };
         filePathLoader.FilePath = "test";
+        processor.OutputData = new List<BirdRecordWrapper> { new BirdRecordWrapper(), new BirdRecordWrapper() };
 
         viewModel.LoadDatabase();
 
+        Assert.AreEqual(true, processor.IsProcessCalled);
+        Assert.AreEqual(2, processor.InputData.Count());
         Assert.AreEqual(2, viewModel.RecordsViewModel.BirdRecords.Count);
         Assert.AreEqual(true, filePathLoader.IsGetOpen);
         Assert.AreEqual("test", loader.Parameters.Filename);
