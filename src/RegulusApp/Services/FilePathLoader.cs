@@ -1,5 +1,5 @@
 ﻿using Microsoft.Win32;
-using RegulusLibrary.Services;
+using RegulusLibrary.Services.Loaders;
 
 namespace RegulusApp.Services;
 
@@ -9,8 +9,8 @@ public class FilePathLoader : IFilePathLoader
     {
         var dialog = new OpenFileDialog
         {
-            DefaultExt = ".mdb",
-            Filter = "Access Database Files (*.mdb)|*.mdb|CSV Files (*.csv)|*.csv",
+            DefaultExt = ".csv",
+            Filter = "CSV Files (*.csv)|*.csv|Access Database Files (*.mdb)|*.mdb",
             ShowReadOnly = true
         };
 

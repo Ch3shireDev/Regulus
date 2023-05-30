@@ -1,6 +1,6 @@
 ﻿using RegulusLibrary.DataStructures;
 
-namespace RegulusLibrary.Services;
+namespace RegulusLibrary.Services.Sources;
 
 public interface IBirdRecordsDbSource
 {

@@ -1,4 +1,4 @@
-using RegulusLibrary.Services;
+using RegulusLibrary.Services.Loaders;
 
 namespace RegulusAppTests.Mockups;
 

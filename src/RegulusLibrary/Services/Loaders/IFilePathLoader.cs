@@ -1,4 +1,4 @@
-﻿namespace RegulusLibrary.Services;
+﻿namespace RegulusLibrary.Services.Loaders;
 
 public interface IFilePathLoader
 {

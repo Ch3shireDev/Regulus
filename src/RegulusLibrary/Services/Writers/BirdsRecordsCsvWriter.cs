@@ -13,7 +13,7 @@ public class BirdsRecordsCsvWriter : IBirdRecordsWriter
 
         if (filename == null) throw new ArgumentNullException(nameof(parameters));
 
-        var records = parameters.BirdRecords;
+        var records = parameters.Records;
 
         var fileWriter = new StreamWriter(filename);
 

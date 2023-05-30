@@ -8,8 +8,8 @@ W ramach programu wyliczane będą średnie i odchylenia standardowe dla paramet
 
 ## Projekt w C#
 
-1. [ ] Moduł do odczytu i zapisu danych z pliku .csv
+1. [x] Moduł do odczytu i zapisu danych z pliku .csv
 2. [ ] Moduł do wyliczeń danych statystycznych (średnia, odchylenie standardowe) dla parametrów pomiarowych (długość skrzydła, masa, etc.) ptaków
 3. [ ] Widok główny programu z tabelą z wpisami
 4. [ ] Oznaczanie wierszy jako błędnych w zależności od podanej liczby odchyleń standardowych
-5. [ ] Widok edycji wpisu
+5. [ ] Widok edycji wpi

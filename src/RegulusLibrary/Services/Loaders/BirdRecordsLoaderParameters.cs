@@ -3,4 +3,5 @@
 public class BirdRecordsLoaderParameters
 {
     public string? Filename { get; set; }
+    public string Extension { get; set; }
 }

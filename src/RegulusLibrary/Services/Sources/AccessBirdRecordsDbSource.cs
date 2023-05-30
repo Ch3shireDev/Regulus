@@ -1,8 +1,7 @@
 ﻿using RegulusLibrary.DataStructures;
-using RegulusLibrary.Services.Sources;
 using RegulusLibrary.Services.Sources.DataStructures;
 
-namespace RegulusLibrary.Services;
+namespace RegulusLibrary.Services.Sources;
 
 public class AccessBirdRecordsDbSource : IBirdRecordsDbSource
 {

@@ -1,4 +1,4 @@
-﻿using RegulusLibrary.Services;
+﻿using RegulusLibrary.Services.Sources;
 using RegulusLibrary.Services.Sources.DataStructures;
 using RegulusTests.Mockups;
 

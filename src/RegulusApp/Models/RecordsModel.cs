@@ -16,13 +16,55 @@ public class RecordsModel
         _birdRecordsWriter = birdRecordsWriter;
     }
 
-    public IEnumerable<BirdRecord> GetRecords(BirdRecordsLoaderParameters parameters)
+    public IEnumerable<BirdRecordWrapper> GetRecordWrappers(BirdRecordsLoaderParameters parameters)
     {
-        return _birdRecordsLoader.GetRecords(parameters);
+        var records = _birdRecordsLoader.GetRecords(parameters);
+        var result = new List<BirdRecordWrapper>();
+
+        foreach (var recordWrapper in records)
+        {
+            var record = new BirdRecordWrapper
+            {
+                Id = recordWrapper.Id,
+                SpeciesCode = recordWrapper.SpeciesCode,
+                Sex = recordWrapper.Sex,
+                Wing = recordWrapper.Wing,
+                Tail = recordWrapper.Tail,
+                Weight = recordWrapper.Weight,
+                DateTime = recordWrapper.DateTime
+            };
+
+            result.Add(record);
+        }
+
+        return result;
     }
 
     public void WriteRecordsToCsv(BirdRecordsSaverParameters parameters)
     {
         _birdRecordsWriter.WriteRecords(parameters);
+    }
+
+    public List<BirdRecord> AsSimpleRecords(List<BirdRecordWrapper> records)
+    {
+        var results = new List<BirdRecord>();
+
+        foreach (var recordWrapper in records)
+        {
+            var record = new BirdRecord
+            {
+                Id = recordWrapper.Id,
+                SpeciesCode = recordWrapper.SpeciesCode,
+                Sex = recordWrapper.Sex,
+                Wing = recordWrapper.Wing,
+                Tail = recordWrapper.Tail,
+                Weight = recordWrapper.Weight,
+                DateTime = recordWrapper.DateTime
+            };
+
+            results.Add(record);
+        }
+
+        return results;
     }
 }

@@ -1,10 +1,10 @@
 ﻿using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Windows.Input;
 using RegulusApp.Helpers;
 using RegulusApp.Models;
 using RegulusLibrary.DataStructures;
-using RegulusLibrary.Services;
 using RegulusLibrary.Services.Loaders;
 
 namespace RegulusApp.ViewModels;
@@ -24,12 +24,31 @@ public class RecordsViewModel : ViewModelBase
     }
 
     private RecordsModel? Model { get; }
-    public ObservableCollection<BirdRecord> BirdRecords { get; } = new ObservableCollection<BirdRecord>();
+    public ObservableCollection<BirdRecord> BirdRecords { get; } = new();
     public ICommand LoadDatabaseCommand => new RelayCommand(p => LoadDatabase());
-    public double LoadingProgressValue { get; set; }
     public ICommand SaveDatabaseToCsvCommand => new RelayCommand(p => SaveDatabaseToCsv());
+    public double LoadingProgressValue { get; set; }
     public double SavingProgressValue { get; set; }
 
+    public void LoadDatabase()
+    {
+        var filepath = _filePathLoader?.GetOpenFilePath();
+        if (string.IsNullOrWhiteSpace(filepath)) return;
+        var extension = Path.GetExtension(filepath);
+        var parameters = new BirdRecordsLoaderParameters
+        {
+            Filename = filepath,
+            Extension = extension
+        };
+        LoadDatabase(parameters);
+    }
+
+    public void LoadDatabase(BirdRecordsLoaderParameters parameters)
+    {
+        var records = Model?.GetRecordWrappers(parameters);
+        if (records == null) return;
+        foreach (var record in records) BirdRecords.Add(record);
+    }
     private void SaveDatabaseToCsv()
     {
         var records = BirdRecords.ToList();
@@ -38,24 +57,9 @@ public class RecordsViewModel : ViewModelBase
         var parameters = new BirdRecordsSaverParameters
         {
             Filename = filepath,
-            BirdRecords = records
+            Records = Model.AsSimpleRecords(records)
         };
 
         Model?.WriteRecordsToCsv(parameters);
-    }
-
-    public void LoadDatabase()
-    {
-        var filepath = _filePathLoader?.GetOpenFilePath();
-        if (string.IsNullOrWhiteSpace(filepath)) return;
-        var parameters = new BirdRecordsLoaderParameters { Filename = filepath };
-        LoadDatabase(parameters);
-    }
-
-    public void LoadDatabase(BirdRecordsLoaderParameters parameters)
-    {
-        var records = Model?.GetRecords(parameters);
-        if (records == null) return;
-        foreach (var record in records) BirdRecords.Add(record);
     }
 }
