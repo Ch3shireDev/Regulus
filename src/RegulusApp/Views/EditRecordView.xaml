@@ -1,0 +1,121 @@
+﻿<UserControl x:Class="RegulusApp.Views.EditRecordView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModels="clr-namespace:RegulusApp.ViewModels"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800" d:Background="AliceBlue">
+    <d:UserControl.DataContext>
+        <viewModels:EditRecordViewModel />
+    </d:UserControl.DataContext>
+    <UserControl.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="HorizontalContentAlignment" Value="Right" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="0">Id</Label>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Model.Id}" IsReadOnly="True" IsEnabled="False" />
+                <Label Grid.Row="1" Grid.Column="0">DateTime</Label>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Model.DateTime}" IsReadOnly="True"
+                         IsEnabled="False" />
+                <Label Grid.Row="2" Grid.Column="0">Species Code</Label>
+                <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Model.SpeciesCode}" />
+                <Label Grid.Row="3" Grid.Column="0">Sex</Label>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Model.Sex}" />
+                <Label Grid.Row="4" Grid.Column="0">Wing</Label>
+                <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Model.Wing,  StringFormat={}{0:F0}}" />
+                <Label Grid.Row="5" Grid.Column="0">Wing Mean</Label>
+                <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Model.WingPopulationMean,  StringFormat={}{0:F3}}"
+                         IsReadOnly="True"
+                         IsEnabled="False" />
+                <Label Grid.Row="6" Grid.Column="0">Wing SD</Label>
+                <TextBox Grid.Row="6" Grid.Column="1"
+                         Text="{Binding Model.WingPopulationStandardDeviation,  StringFormat={}{0:F3}}"
+                         IsReadOnly="True" IsEnabled="False" />
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0">Tail</Label>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Model.Tail,  StringFormat={}{0:F0}}" />
+                <Label Grid.Row="1" Grid.Column="0">Tail Mean</Label>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Model.TailPopulationMean,  StringFormat={}{0:F3}}"
+                         IsReadOnly="True"
+                         IsEnabled="False" />
+                <Label Grid.Row="2" Grid.Column="0">Tail SD</Label>
+                <TextBox Grid.Row="2" Grid.Column="1"
+                         Text="{Binding Model.TailPopulationStandardDeviation,  StringFormat={}{0:F3}}"
+                         IsReadOnly="True" IsEnabled="False" />
+                <Label Grid.Row="3" Grid.Column="0">Weight</Label>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Model.Weight,  StringFormat={}{0:F1}}" />
+                <Label Grid.Row="4" Grid.Column="0">Weight Mean</Label>
+                <TextBox Grid.Row="4" Grid.Column="1"
+                         Text="{Binding Model.WeightPopulationMean,  StringFormat={}{0:F3}}" IsReadOnly="True"
+                         IsEnabled="False" />
+                <Label Grid.Row="5" Grid.Column="0">Weight SD</Label>
+                <TextBox Grid.Row="5" Grid.Column="1"
+                         Text="{Binding Model.WeightPopulationStandardDeviation,  StringFormat={}{0:F3}}"
+                         IsReadOnly="True" IsEnabled="False" />
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Margin="10" Padding="5,10" Command="{Binding SaveCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}">
+                Zapisz
+            </Button>
+            <Button Grid.Column="1" Margin="10" Padding="5,10" Command="{Binding CancelCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}">
+                Porzuć
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>

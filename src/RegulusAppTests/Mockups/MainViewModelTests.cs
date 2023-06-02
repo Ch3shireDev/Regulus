@@ -1,5 +1,3 @@
-using System.Collections;
-using System.ComponentModel.DataAnnotations;
 using RegulusApp.Models;
 using RegulusApp.ViewModels;
 using RegulusLibrary.DataStructures;
@@ -12,10 +10,11 @@ public class MainViewModelTests
     private MockFilePathLoader? filePathLoader;
     private MockBirdRecordsLoader? loader;
     private MainModel? model;
-    private MainViewModel? viewModel;
-    private MockBirdRecordsWriter? writer;
     private MockBirdRecordProcessor? processor;
     private MockBirdRecordsValidator? validator;
+    private MockEditRecordViewer? viewer;
+    private MainViewModel? viewModel;
+    private MockBirdRecordsWriter? writer;
 
     [TestInitialize]
     public void Initialize()
@@ -25,9 +24,10 @@ public class MainViewModelTests
         writer = new MockBirdRecordsWriter();
         processor = new MockBirdRecordProcessor();
         validator = new MockBirdRecordsValidator();
+        viewer = new MockEditRecordViewer();
 
         model = new MainModel(loader, writer, processor, validator);
-        viewModel = new MainViewModel(model, filePathLoader);
+        viewModel = new MainViewModel(model, filePathLoader, viewer);
     }
 
     [TestMethod]

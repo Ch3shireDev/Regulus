@@ -25,7 +25,10 @@ public partial class App : Application
             WeightNumberOfStandardDeviations = 3
         };
         var model = new MainModel(loader, writer, processor, validator);
-        var viewModel = new MainViewModel(model, filePathLoader);
+
+        var editRecordViewer = new BirdRecordEditorViewer();
+
+        var viewModel = new MainViewModel(model, filePathLoader, editRecordViewer);
         var window = new MainWindow
         {
             DataContext = viewModel

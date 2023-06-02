@@ -10,9 +10,9 @@ namespace RegulusApp.Models;
 public class RecordsModel
 {
     private readonly IBirdRecordsLoader _loader;
-    private readonly IBirdRecordsWriter _writer;
     private readonly IBirdRecordsProcessor _processor;
     private readonly IBirdRecordsValidator _validator;
+    private readonly IBirdRecordsWriter _writer;
 
 
     public RecordsModel(IBirdRecordsLoader loader, IBirdRecordsWriter writer, IBirdRecordsProcessor processor, IBirdRecordsValidator validator)

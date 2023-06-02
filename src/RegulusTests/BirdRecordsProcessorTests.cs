@@ -50,7 +50,6 @@ public class BirdRecordsProcessorTests
     [TestMethod]
     public void IgnoreZeroValueTest()
     {
-
         var birdRecord1 = new BirdRecord
         {
             Id = 1,
@@ -110,7 +109,6 @@ public class BirdRecordsProcessorTests
     [TestMethod]
     public void TwoRecordsTest()
     {
-
         var birdRecord1 = new BirdRecord
         {
             Id = 1,
@@ -133,7 +131,7 @@ public class BirdRecordsProcessorTests
             DateTime = new DateTime(2020, 01, 03)
         };
 
-        var results = processor.Process(new[] { birdRecord1 , birdRecord2}).ToList();
+        var results = processor.Process(new[] { birdRecord1, birdRecord2 }).ToList();
 
         Assert.IsNotNull(results);
         Assert.AreEqual(2, results.Count);
@@ -170,7 +168,6 @@ public class BirdRecordsProcessorTests
     [TestMethod]
     public void CalculateForEachSpeciesSeparately()
     {
-
         var birdRecord1 = new BirdRecord
         {
             Id = 1,
@@ -215,7 +212,7 @@ public class BirdRecordsProcessorTests
             DateTime = new DateTime(2020, 01, 05)
         };
 
-        var results = processor.Process(new[] { birdRecord1, birdRecord2 , birdRecord3, birdRecord4}).ToList();
+        var results = processor.Process(new[] { birdRecord1, birdRecord2, birdRecord3, birdRecord4 }).ToList();
 
         Assert.IsNotNull(results);
         Assert.AreEqual(4, results.Count);
@@ -236,10 +233,10 @@ public class BirdRecordsProcessorTests
         Assert.AreEqual(6, results[1].WeightPopulationMean);
         Assert.AreEqual(1.4142, (double)results[1].WeightPopulationStandardDeviation, 0.001);
 
-        
+
         Assert.AreEqual(3, results[2].Id);
         Assert.AreEqual(40, results[2].WingPopulationMean);
-        Assert.AreEqual((double)14.142, (double)results[2].WingPopulationStandardDeviation, 0.001);
+        Assert.AreEqual(14.142, (double)results[2].WingPopulationStandardDeviation, 0.001);
         Assert.AreEqual(75, results[2].TailPopulationMean);
         Assert.AreEqual(35.355, (double)results[2].TailPopulationStandardDeviation, 0.001);
         Assert.AreEqual(65, results[2].WeightPopulationMean);
@@ -247,7 +244,7 @@ public class BirdRecordsProcessorTests
 
         Assert.AreEqual(4, results[3].Id);
         Assert.AreEqual(40, results[3].WingPopulationMean);
-        Assert.AreEqual((double)14.142, (double)results[3].WingPopulationStandardDeviation, 0.001);
+        Assert.AreEqual(14.142, (double)results[3].WingPopulationStandardDeviation, 0.001);
         Assert.AreEqual(75, results[3].TailPopulationMean);
         Assert.AreEqual(35.355, (double)results[3].TailPopulationStandardDeviation, 0.001);
         Assert.AreEqual(65, results[3].WeightPopulationMean);

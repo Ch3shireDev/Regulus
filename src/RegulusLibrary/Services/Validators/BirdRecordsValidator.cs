@@ -10,6 +10,7 @@ public class BirdRecordsValidator : IBirdRecordsValidator
 
     public bool IsValid(BirdRecordWrapper birdRecord)
     {
+        if (birdRecord == null) return true;
         if (!VerifyValue(birdRecord.Tail, birdRecord.TailPopulationMean, birdRecord.TailPopulationStandardDeviation, TailNumberOfStandardDeviations)) return false;
         if (!VerifyValue(birdRecord.Wing, birdRecord.WingPopulationMean, birdRecord.WingPopulationStandardDeviation, WingNumberOfStandardDeviations)) return false;
         if (!VerifyValue(birdRecord.Weight, birdRecord.WeightPopulationMean, birdRecord.WeightPopulationStandardDeviation, WeightNumberOfStandardDeviations)) return false;

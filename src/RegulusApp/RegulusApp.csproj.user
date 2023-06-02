@@ -7,7 +7,13 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="EditRecordWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\ConfigView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\EditRecordView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\RecordsView.xaml.cs">
@@ -18,7 +24,13 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="EditRecordWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\ConfigView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\EditRecordView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\RecordsView.xaml">

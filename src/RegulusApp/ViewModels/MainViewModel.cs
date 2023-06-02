@@ -1,7 +1,7 @@
 ﻿using System.Windows.Input;
 using RegulusApp.Helpers;
 using RegulusApp.Models;
-using RegulusLibrary.Services.Loaders;
+using RegulusApp.Services;
 
 namespace RegulusApp.ViewModels;
 
@@ -15,12 +15,12 @@ public class MainViewModel : ViewModelBase
         ConfigViewModel = new ConfigViewModel();
     }
 
-    public MainViewModel(MainModel model, IFilePathLoader filePathLoader)
+    public MainViewModel(MainModel model, IFilePathLoader filePathLoader, IBirdRecordEditorViewer birdRecordEditorViewer)
     {
         _filePathLoader = filePathLoader;
         Model = model;
 
-        RecordsViewModel = new RecordsViewModel(model.RecordsModel, filePathLoader);
+        RecordsViewModel = new RecordsViewModel(model.RecordsModel, filePathLoader, birdRecordEditorViewer);
         ConfigViewModel = new ConfigViewModel();
     }
 
