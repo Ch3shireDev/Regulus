@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:RegulusApp.ViewModels"
         xmlns:views="clr-namespace:RegulusApp.Views"
         mc:Ignorable="d"
-        Title="EditRecordWindow" Height="450" Width="800">
+        Title="Edycja rekordu" Height="450" Width="800">
     <d:Window.DataContext>
         <local:EditRecordViewModel />
     </d:Window.DataContext>

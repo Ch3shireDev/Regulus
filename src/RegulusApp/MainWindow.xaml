@@ -6,7 +6,7 @@
         xmlns:views="clr-namespace:RegulusApp.Views"
         xmlns:viewModels="clr-namespace:RegulusApp.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1000">
+        Title="Regulus ver. 1.0" Height="600" Width="1000">
     <d:Window.DataContext>
         <viewModels:MainViewModel />
     </d:Window.DataContext>
@@ -17,14 +17,14 @@
             </MenuItem>
         </Menu>
         <Grid>
-            <TabControl Margin="10">
-                <TabItem Header="Okno główne">
+            <!--<TabControl Margin="10">-->
+                <!--<TabItem Header="Okno główne">-->
                     <views:RecordsView DataContext="{Binding RecordsViewModel}" />
-                </TabItem>
-                <TabItem Header="Konfiguracja">
+                <!--</TabItem>-->
+                <!--<TabItem Header="Konfiguracja">
                     <views:ConfigView DataContext="{Binding ConfigViewModel}" />
-                </TabItem>
-            </TabControl>
+                </TabItem>-->
+            <!--</TabControl>-->
         </Grid>
     </DockPanel>
 </Window>
